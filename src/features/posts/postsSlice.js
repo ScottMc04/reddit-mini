@@ -1,15 +1,41 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { fetchPosts } from "./api";
 
 const postsSlice = createSlice({
     name: 'posts',
-    initialState: [
-        {id: '1', title: 'post 1', content: 'I like this sentence.', userId: '1', votes: '104'},
-        {id: '2', title: 'post 2', content: 'words but part 2', userId: '2', votes: '53'}
-    ],
+    initialState: {
+        posts: {},
+        isLoading: false,
+        hasError: false,
+        modifiedPosts: []
+    },
     reducers: {
-        
+        setModifiedPosts: (state, action) => {
+            state.modifiedPosts = action.payload;
+        }
+    },
+    extraReducers: {
+        [fetchPosts.pending]: (state) => {
+            state.isLoading = true;
+            state.hasError = false;
+        },
+        [fetchPosts.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.hasError = false;
+            state.posts = action.payload;
+        },
+        [fetchPosts.rejected]: (state) => {
+            state.isLoading = false;
+            state.hasError = true;
+        }
     }
 });
 
-export const selectAllPosts = state => state.posts;
+export const selectAllPosts = state => state.posts.posts;
+export const selectArePostsLoading = state => state.posts.isLoading;
+export const selectPostsError = state => state.posts.hasError;
+export const selectModifiedPosts = state => state.posts.modifiedPosts;
+
+export const { setModifiedPosts } = postsSlice.actions;
+
 export default postsSlice.reducer;

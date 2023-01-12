@@ -1,0 +1,23 @@
+article {
+    border: 2px solid red;
+    margin: 2em 10%;
+    color: white;
+}
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 40px;
+}
+h2, p{
+    padding: 0 1em;
+    color: white;
+}
+#footer {
+    display: flex;
+    border-top: 1px solid red;
+    justify-content: space-between;
+}
+.msg {
+    text-align: center;
+    font-size: 25px;
+}
