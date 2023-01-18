@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { selectAllPosts, selectArePostsLoading, selectPostsError, selectModifiedPosts, setModifiedPosts } from "./postsSlice";
-import PostsExcerpt from "./post";
+import Post from "./Post";
 import './PostsList.css'; 
 import { fetchPosts } from "./api";
 
@@ -31,16 +31,15 @@ const PostsList = () => {
     }
     else {
         const finalPosts = modifiedPosts.slice();
-        content = finalPosts.map(post => <PostsExcerpt key={post.id} post={post} />)
+        content = finalPosts.map(post => <Post key={post.id} post={post} />)
     }
     return (
             <section>
-                <h2>Posts</h2>
+                <h2 id="bigPosts">Posts</h2>
                 {content}
             </section>
         )
    
     
 }
-
 export default PostsList;

@@ -1,15 +1,21 @@
+main{
+    margin: 2em 20%;
+}
 article {
     border: 2px solid red;
-    margin: 2em 10%;
     color: white;
 }
-h2 {
+#bigPosts {
     text-align: center;
     text-decoration: underline;
     font-size: 40px;
+    color: white;
 }
-h2, p{
-    padding: 0 1em;
+h3 {
+    font-size: 26px;
+}
+h3, p{
+    padding: 0 3rem;
     color: white;
 }
 #footer {
@@ -20,4 +26,15 @@ h2, p{
 .msg {
     text-align: center;
     font-size: 25px;
+}
+.video, .image{
+    max-width: 95%;
+    max-height: 70vh;
+}
+.link {
+    color: rgb(158, 158, 158);
+    font-style: italic;
+}
+.img-article, .vid-article{
+    text-align: center;
 }
