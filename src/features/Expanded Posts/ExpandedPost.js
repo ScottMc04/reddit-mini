@@ -1,5 +1,3 @@
-import './expandedPosts.css';
-
 const ExpandedPost = ({ post }) => {
 
     let content;

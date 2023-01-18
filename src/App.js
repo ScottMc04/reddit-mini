@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import PostsList from './features/posts/PostsList';
 import { selectModifiedPosts } from './features/posts/postsSlice';
-import ExpandedPost from './features/Expanded Posts/ExpandedPost';
+import PostWithComments from './features/Expanded Posts/PostWithComments';
 
 export default function App() {
 
@@ -14,7 +14,7 @@ export default function App() {
     for (const post in posts) {
       setPostRoutes((prev) => ([
         ...prev,
-        <Route path={`/${posts[post].link_extention}`} element={<ExpandedPost post={posts[post]} />} key={posts[post].id} />
+        <Route path={`/${posts[post].link_extention}`} element={<PostWithComments post={posts[post]} />} key={posts[post].id} />
       ]))
     }
     return () => {setPostRoutes([])}
