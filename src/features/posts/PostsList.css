@@ -44,7 +44,7 @@ h3, p{
 #reddit-mini {
     color: white;
 }
-nav, nav a  {
+nav, .click  {
     background-color: #1c1c1c;
     padding: 0.5em;
     display: flex;
@@ -57,10 +57,13 @@ nav input {
     border-radius: 100px;
     margin-right: 5%
 }
-nav a h1 {
+.click h1 {
     padding-right: 1em;
 }
-nav a img {
+.click img {
     height: 80px;
     padding-right: 0.5em;
+}
+.click:hover{
+    cursor: pointer;
 }

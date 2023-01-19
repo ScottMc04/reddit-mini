@@ -19,10 +19,10 @@ const Header = () => {
         <div className="App">
             <body>
                 <nav>
-                    <a href="#">
+                    <div className='click' onClick={() => navigate(-1)}>
                         <img src={logo} alt="logo" />
                         <h1 id="reddit-mini">Reddit Mini</h1>
-                    </a>
+                    </div>
                     <input type="text" placeholder='Search' onChange={handleFilter} className='search' value={currentFilter}></input>
                 </nav>
             </body>
