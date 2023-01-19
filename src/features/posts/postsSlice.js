@@ -7,11 +7,15 @@ const postsSlice = createSlice({
         posts: {},
         isLoading: false,
         hasError: false,
-        modifiedPosts: []
+        modifiedPosts: [],
+        filter: ""
     },
     reducers: {
         setModifiedPosts: (state, action) => {
             state.modifiedPosts = action.payload;
+        },
+        setFilter: (state, action) => {
+            state.filter = action.payload;
         }
     },
     extraReducers: {
@@ -35,7 +39,8 @@ export const selectAllPosts = state => state.posts.posts;
 export const selectArePostsLoading = state => state.posts.isLoading;
 export const selectPostsError = state => state.posts.hasError;
 export const selectModifiedPosts = state => state.posts.modifiedPosts;
+export const selectFilter = state => state.posts.filter;
 
-export const { setModifiedPosts } = postsSlice.actions;
+export const { setModifiedPosts, setFilter } = postsSlice.actions;
 
 export default postsSlice.reducer;
